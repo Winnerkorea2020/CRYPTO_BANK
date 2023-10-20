@@ -1,28 +1,43 @@
-import ExchangeDirect from "@/components/ExchangeDirect";
-import MainLink from "@/components/MainLink";
-import SliderComponets from "@/components/SliderComponents";
+import Header from "@/components/Header";
+import Image from "next/image";
 
-import Link from "next/link";
-
-export default function Home() {
+export default function RootLayoutHome() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
-      <div className="flex-1 w-full">
-        <h2 className="text-center w-full tracking-tighter py-5 my-2">
-          CRYPTO BANK
-        </h2>
-        <div className="">
-          <div className="mb-2">
-            <SliderComponets />
+    <div className="flex flex-col justify-between min-h-screen">
+      <Header url={`/`} title={"로그인"} exchangeList={false} />
+      <div className="flex-1 pt-[60px]">
+        <div className=" flex justify-center items-center">
+          <div className="text-5xl tracking-tighter text-secondary font-righteous">
+            CRYPTO BANK
           </div>
-          <div className="mb-2">
-            <Link href="exchange">
-              <ExchangeDirect />
-            </Link>
-          </div>
-          <MainLink />
         </div>
+        <p className="text-center font-righteous text-3xl">Platform</p>
       </div>
-    </main>
+      <form className="mb-[100px]">
+        <div className="font-semibold mt-2 mb-1">아이디</div>
+        <input
+          type="text"
+          placeholder="아이디를 입력하세요"
+          className="w-full py-2.5 px-2 rounded border-secondary border focus:border-secondary"
+        />
+        <div className="font-semibold mt-2 mb-1">비밀번호</div>
+        <input
+          type="password"
+          placeholder="비밀번호를 입력하세요"
+          className="w-full py-2.5 px-2 rounded border-secondary border focus:border-secondary"
+        />
+        <div>
+          <p>아이디 및 비밀번호를 확인하시기 바랍니다.</p>
+        </div>
+        <input
+          type="submit"
+          value={`로그인`}
+          className="text-white bg-secondary rounded w-full py-2.5 px-2"
+        />
+        <p className="mt-10 text-center tracking-tighter font-normal">
+          아이디 및 비밀번호 찾기는 관리자에게 문의 바랍니다.
+        </p>
+      </form>
+    </div>
   );
 }
