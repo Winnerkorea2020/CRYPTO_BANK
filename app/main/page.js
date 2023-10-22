@@ -13,10 +13,10 @@ const page = () => {
             CRYPTO BANK
           </h3>
         </div>
-        <div className="mt-10">
-          <div className="relative w-full h-64 bg-lime-500 mt-2"></div>
-          <Link href="/exchange">
-            <div className="relative w-full h-40 rounded-lg">
+        <div className="relative w-full h-44 bg-lime-500 mt-2"></div>
+        <div className=" my-2">
+          <Link href="/exchange" className="">
+            <div className="relative w-full h-20 rounded-lg">
               <Image
                 src="/exchange_Point.png"
                 fill
@@ -25,18 +25,17 @@ const page = () => {
             </div>
           </Link>
         </div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-2 mb-10">
-        {mainLinkItem.map((mainLink) => (
-          <MainLinkButton
-            key={mainLink.id}
-            url={mainLink.url}
-            img={mainLink.icon}
-            title={mainLink.title}
-            subtitle={mainLink.subtitle}
-          />
-        ))}
+        <div className="grid grid-cols-2 gap-2 mb-10">
+          {mainLinkItem.map((mainLink) => (
+            <MainLinkButton
+              key={mainLink.id}
+              url={mainLink.url}
+              img={mainLink.icon}
+              title={mainLink.title}
+              subtitle={mainLink.subtitle}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
